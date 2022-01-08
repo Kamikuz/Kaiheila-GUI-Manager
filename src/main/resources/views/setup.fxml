@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.kamikuz.kaiheiguimanager.controller.SetupController">
+   <Label alignment="CENTER" layoutX="525.0" layoutY="48.0" prefHeight="110.0" prefWidth="231.0" text="%ui.title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+   <HBox layoutX="406.0" layoutY="271.0" prefHeight="100.0" prefWidth="469.0" AnchorPane.bottomAnchor="405.0" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="405.0" AnchorPane.topAnchor="271.0">
+      <TextField fx:id="tokenField" focusTraversable="false" prefHeight="51.0" prefWidth="311.0" promptText="%ui.placeholder.token">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </TextField>
+      <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#login" prefHeight="50.0" prefWidth="183.0" text="%ui.button.login" />
+   </HBox>
+   <Label fx:id="status" alignment="CENTER" layoutX="491.0" layoutY="432.0" prefHeight="54.0" prefWidth="299.0" text="%ui.loading" visible="false">
+      <graphic>
+         <ProgressIndicator fx:id="indicator" prefHeight="66.0" prefWidth="18.0" />
+      </graphic>
+   </Label>
+</AnchorPane>
