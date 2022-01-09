@@ -1,6 +1,6 @@
 package cn.kamikuz.kaiheiguimanager;
 
-import cn.kamikuz.kaiheiguimanager.i18n.i18n;
+import cn.kamikuz.kaiheiguimanager.utils.i18n.i18n;
 import com.google.common.eventbus.EventBus;
 
 public class Bootstrap {

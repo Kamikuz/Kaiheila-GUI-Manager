@@ -1,8 +1,9 @@
 package cn.kamikuz.kaiheiguimanager;
 
-import cn.kamikuz.kaiheiguimanager.controller.PrototypeController;
-import cn.kamikuz.kaiheiguimanager.i18n.i18n;
-import cn.kamikuz.kaiheiguimanager.io.kaiheila.KaiheilaManager;
+import cn.kamikuz.kaiheiguimanager.ui.controller.PrototypeController;
+import cn.kamikuz.kaiheiguimanager.utils.i18n.i18n;
+import cn.kamikuz.kaiheiguimanager.service.kaiheila.KaiheilaManager;
+import cn.kamikuz.kaiheiguimanager.utils.UIUtils;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -46,7 +47,7 @@ public class KaiheilaGuiManager extends Application {
       controller.prepare(data);
       mainStage.setScene(temp);
     } catch (IOException e) {
-      Utils.Alert(Alert.AlertType.ERROR, "Error", "Cannot open the page: " + page.page);
+      UIUtils.Alert(Alert.AlertType.ERROR, "Error", "Cannot open the page: " + page.page);
       e.printStackTrace();
     }
   }

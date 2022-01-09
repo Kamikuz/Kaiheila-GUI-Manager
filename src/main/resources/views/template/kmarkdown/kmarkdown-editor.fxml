@@ -1,44 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import cn.kamikuz.kaiheiguimanager.ui.component.kmarkdown.element.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<fx:root prefHeight="460.0" prefWidth="718.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <ToolBar prefHeight="32.0" prefWidth="718.0" BorderPane.alignment="CENTER">
-        <items>
-          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="粗体" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="斜体" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="下划线" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="删除线" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="链接" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="代码" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="剧透" />
-            <Separator orientation="VERTICAL" prefHeight="17.0" prefWidth="3.0" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="代码块" />
-            <Button mnemonicParsing="false" text="引用" />
-            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
-            <Button mnemonicParsing="false" text="分割" />
-        </items>
-      </ToolBar>
-   </top>
-   <bottom>
-      <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="718.0" text="%key.unspecified" BorderPane.alignment="CENTER" />
-   </bottom>
-   <center>
-      <SplitPane dividerPositions="0.7" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <TreeView editable="true" layoutX="149.0" layoutY="61.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <TitledPane collapsible="false" layoutX="6.0" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" text="%key.unspecified" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-   </center>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" prefHeight="460.0" prefWidth="718.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/11.0.2">
+    <top>
+        <ToolBar prefHeight="32.0" prefWidth="718.0" BorderPane.alignment="CENTER" fx:id="toolBar">
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="粗体" type="Bold"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="斜体" type="Italic"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="下划线" type="Underline"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="删除线" type="StrikeThrough"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="链接" type="Link"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="代码" type="Code"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="剧透" type="HeiMu"/>
+            <Separator orientation="VERTICAL" prefHeight="17.0" prefWidth="3.0"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="代码块" type="CodeBlock"/>
+            <KmarkdownComponentButton mnemonicParsing="false" text="引用" type="Quote"/>
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0"/>
+            <KmarkdownComponentButton mnemonicParsing="false" text="分割" type="DividerLine"/>
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="用户" type="User"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="频道" type="Channel"/>
+            <KmarkdownComponentButton mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="默认表情" type="Emoji"/>
+            <KmarkdownComponentButton mnemonicParsing="false" text="服务器表情" type="ServerEmoji"/>
+        </ToolBar>
+    </top>
+    <bottom>
+        <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="718.0" text="%ui.button.send" BorderPane.alignment="CENTER" onAction="#send" fx:id="sendButton" disable="true"/>
+    </bottom>
+    <center>
+        <TextArea prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="editor"/>
+    </center>
 </fx:root>
