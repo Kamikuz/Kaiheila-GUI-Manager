@@ -3,26 +3,26 @@ package cn.kamikuz.kaiheiguimanager.ui.controller;
 import cn.fightingguys.kaiheila.api.Channel;
 import cn.fightingguys.kaiheila.api.Guild;
 import cn.kamikuz.kaiheiguimanager.KaiheilaGuiManager;
-import cn.kamikuz.kaiheiguimanager.ui.component.kmarkdown.KMarkdownEditor;
+import cn.kamikuz.kaiheiguimanager.ui.component.MessageEditor;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.BorderPane;
 
 public class ServerController extends PrototypeController {
   protected Channel selectedChannel;
-  KMarkdownEditor editorController;
+  MessageEditor editorController;
   @FXML
   private Label serverName;
   @FXML
   private ListView<ToggleButton> channelList;
   @FXML
-  private Pane editor;
+  private BorderPane editor;
 
   @Override
   public void initialize() {
-    editorController = new KMarkdownEditor(editor, this);
+    editorController = new MessageEditor(editor, this);
   }
 
   @Override

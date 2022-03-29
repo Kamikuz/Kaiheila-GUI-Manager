@@ -46,17 +46,6 @@ public class WSClient extends WebSocketClient {
   }
 
   /**
-   * Callback for binary messages received from the remote host
-   *
-   * @param bytes The binary message that was received.
-   * @see #onMessage(String)
-   **/
-  @Override
-  public void onMessage(ByteBuffer bytes) {
-
-  }
-
-  /**
    * Called after the websocket connection has been closed.
    *
    * @param code   The codes can be looked up here:
@@ -65,7 +54,6 @@ public class WSClient extends WebSocketClient {
    **/
   @Override
   public void onClose(int code, String reason, boolean remote) {
-
   }
 
   /**
@@ -78,6 +66,17 @@ public class WSClient extends WebSocketClient {
    **/
   @Override
   public void onError(Exception ex) {
+
+  }
+
+  /**
+   * Callback for binary messages received from the remote host
+   *
+   * @param bytes The binary message that was received.
+   * @see #onMessage(String)
+   **/
+  @Override
+  public void onMessage(ByteBuffer bytes) {
 
   }
 }

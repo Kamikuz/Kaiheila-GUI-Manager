@@ -1,48 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<DialogPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="182.0" prefWidth="237.0"
-            xmlns="http://javafx.com/javafx/11.0.2">
+<?import javafx.scene.text.*?>
+
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="182.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
     <header>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="73.0" prefWidth="480.0">
-            <children>
-                <Label layoutX="199.0" layoutY="28.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <padding>
-                        <Insets left="20.0"/>
-                    </padding>
-                    <font>
-                        <Font name="System Bold" size="24.0"/>
-                    </font>
-                </Label>
-            </children>
-        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="48.0" prefWidth="305.0" />
     </header>
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="77.0" prefWidth="480.0">
             <children>
-                <HBox layoutX="140.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <HBox layoutX="20.0" layoutY="20.0" prefHeight="83.0" prefWidth="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                     <children>
-                        <Label prefHeight="44.0" prefWidth="121.0" text="Label">
+                        <Label fx:id="fieldLabel" prefHeight="44.0" prefWidth="96.0" text="Label">
                             <HBox.margin>
-                                <Insets/>
+                                <Insets />
                             </HBox.margin>
                             <padding>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </padding>
                             <font>
-                                <Font size="24.0"/>
+                                <Font size="24.0" />
                             </font>
                         </Label>
-                        <ChoiceBox prefHeight="44.0" prefWidth="99.0"/>
+                        <ChoiceBox prefHeight="44.0" prefWidth="196.0" />
                     </children>
                 </HBox>
             </children>
         </AnchorPane>
     </content>
     <buttonTypes>
-        <ButtonType fx:constant="YES"/>
+        <ButtonType fx:constant="YES" />
     </buttonTypes>
 </DialogPane>

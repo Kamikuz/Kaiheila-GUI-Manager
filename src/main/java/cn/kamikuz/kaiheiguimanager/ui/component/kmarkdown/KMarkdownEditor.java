@@ -1,6 +1,8 @@
 package cn.kamikuz.kaiheiguimanager.ui.component.kmarkdown;
 
+import cn.fightingguys.kaiheila.entity.MemberEntity;
 import cn.fightingguys.kaiheila.entity.kmarkdown.KMarkdownBuilder;
+import cn.kamikuz.kaiheiguimanager.ui.component.SelectionDialog;
 import cn.kamikuz.kaiheiguimanager.ui.component.kmarkdown.element.KmarkdownComponentButton;
 import cn.kamikuz.kaiheiguimanager.ui.controller.ServerController;
 import cn.kamikuz.kaiheiguimanager.utils.UIUtils;
@@ -14,18 +16,16 @@ import javafx.scene.control.ToolBar;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class KMarkdownEditor extends Pane {
-
-  KMarkdownBuilder builder = new KMarkdownBuilder();
   @FXML
   ToolBar toolBar;
   @FXML
   TextArea editor;
   @FXML
   Button sendButton;
-
   ServerController serverController;
 
   public KMarkdownEditor(Pane parent, ServerController serverController) {
@@ -105,9 +105,12 @@ public class KMarkdownEditor extends Pane {
                 editor.requestFocus();
               }
               case User -> {
-                editor.insertText(editor.getText().length(), "(met)(met)");
-                editor.positionCaret(editor.getCaretPosition() - 5);
-                editor.requestFocus();
+                List<MemberEntity> members = serverController.getSelectedChannel().getGuild().getMembers();
+                new SelectionDialog<>(members, "User", "User", (u) -> {
+                  editor.insertText(editor.getText().length(), "(met)" + u.getUserId() + "(met)");
+                  editor.positionCaret(editor.getCaretPosition() - 5);
+                  editor.requestFocus();
+                });
               }
               case Channel -> {
                 editor.insertText(editor.getText().length(), "(chn)(chn)");

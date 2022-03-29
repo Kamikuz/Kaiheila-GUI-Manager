@@ -1,6 +1,7 @@
 package cn.kamikuz.kaiheiguimanager;
 
 import cn.kamikuz.kaiheiguimanager.utils.i18n.i18n;
+import cn.kamikuz.kaiheiguimanager.utils.io.storage.StorageManager;
 import com.google.common.eventbus.EventBus;
 
 public class Bootstrap {
@@ -13,6 +14,7 @@ public class Bootstrap {
    */
   public static void main(String[] args) {
     i18n.Instance.init();
+    StorageManager.Instance.init();
     KaiheilaGuiManager.main(args);
   }
 

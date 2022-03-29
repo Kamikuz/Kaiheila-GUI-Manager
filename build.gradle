@@ -14,7 +14,7 @@ repositories {
         url = uri("https://maven.pkg.github.com/Kamikuz/REPOSITORY")
         credentials {
             username = "Kamikuz"
-            password = "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"
+            password = "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"
         }
     }
 }
@@ -46,7 +46,7 @@ dependencies {
     implementation("com.google.guava:guava:31.0.1-jre")
     implementation('org.kordamp.ikonli:ikonli-javafx:12.2.0')
     implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
-    implementation('cn.fightingguys.kaiheila:rabbit:0.0.9')
+    implementation('cn.fightingguys.kaiheila:rabbit:0.0.10')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
